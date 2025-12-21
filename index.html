@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>Meu Projeto RA Geolocation</title>
+  <title>Teste RA</title>
   <script type='text/javascript' src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
   <script type='text/javascript'
     src='https://raw.githack.com/AR-js-org/AR.js/3.4.7/three.js/build/ar-threex-location-only.js'></script>
@@ -11,6 +11,16 @@
     src='https://raw.githack.com/AR-js-org/AR.js/3.4.7/aframe/build/aframe-ar.js'></script>
   <script type='text/javascript'
     src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+  <script>
+    AFRAME.registerComponent('click-link', {
+      schema: { url: { type: 'string', default: '' } },
+      init: function () {
+        this.el.addEventListener('click', () => {
+          window.location.href = this.data.url;
+        });
+      }
+    });
+  </script>
 </head>
 
 <body style="margin: 0; overflow: hidden;">
@@ -18,10 +28,10 @@
   <!-- Cabeçalho para mostrar uma versão e facilitar os testes. Pode ser removido depois -->
   <div
     style="position: fixed; top: 0; left: 0; width: 100%; box-sizing: border-box; text-align: center; background-color: rgba(0,0,0,0.5); color: white; padding: 5px; z-index: 1;">
-    <h1>Meu Projeto RA Geolocation v1.26</h1>
+    <h1>Teste RA v1.27</h1>
   </div>
 
-  <a-scene vr-mode-ui='enabled: false' embedded arjs='sourceType: webcam; debugUIEnabled: false;' arjs-location-source>
+  <a-scene cursor='rayOrigin: mouse' raycaster='near: 0.1; far: 50000' vr-mode-ui='enabled: false' embedded arjs='sourceType: webcam; debugUIEnabled: false;' arjs-location-source>
 
     <!-- Aqui são carregadas as imagens -->
     <a-assets>
@@ -34,23 +44,23 @@
     <!-- scale indica o tamanho em metros (x y z), z não importa porque são imagens 2d -->
 
     <!-- Bernardao -->
-    <a-plane src="#pin" look-at="[gps-camera]" scale="5 10 1" material="transparent: true; alpha-test: 0.5"
+    <a-plane src="#pin" click-link="url: https://www.ufv.br/" look-at="[gps-camera]" scale="5 10 1" material="transparent: true; alpha-test: 0.5"
       gps-entity-place="latitude: -20.762000; longitude: -42.869353;"></a-plane>
 
     <!-- Bello Lisboa -->
-    <a-plane src="#pin" look-at="[gps-camera]" scale="2 4 1" material="transparent: true; alpha-test: 0.5"
+    <a-plane src="#pin" click-link="url: https://www.ufv.br/" look-at="[gps-camera]" scale="2 4 1" material="transparent: true; alpha-test: 0.5"
       gps-entity-place="latitude: -20.762783714898124; longitude: -42.86826288160144;"></a-plane>
 
     <!-- Este é o clube -->
-    <a-plane src="#pin" look-at="[gps-camera]" scale="10 20 1" material="transparent: true; alpha-test: 0.5"
+    <a-plane src="#pin" click-link="url: https://www.ufv.br/" look-at="[gps-camera]" scale="10 20 1" material="transparent: true; alpha-test: 0.5"
       gps-entity-place="latitude: -20.717427; longitude: -42.870493;"></a-plane>
 
     <!-- Mada -->
-    <a-plane src="#pin" look-at="[gps-camera]" scale="10 20 1" material="transparent: true; alpha-test: 0.5"
+    <a-plane src="#pin" click-link="url: https://www.ufv.br/" look-at="[gps-camera]" scale="10 20 1" material="transparent: true; alpha-test: 0.5"
       gps-entity-place="latitude: -20.720308609543455; longitude: -42.86602629739985;"></a-plane>
     
     <!-- André -->
-    <a-plane src="#pin" look-at="[gps-camera]" scale="10 20 1" material="transparent: true; alpha-test: 0.5"
+    <a-plane src="#pin" click-link="url: https://www.ufv.br/" look-at="[gps-camera]" scale="10 20 1" material="transparent: true; alpha-test: 0.5"
       gps-entity-place="latitude: -20.720953116413185; longitude: -42.86622534743876;"></a-plane>
 
     <a-camera id="camera" gps-camera rotation-reader></a-camera>
