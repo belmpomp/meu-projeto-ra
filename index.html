@@ -18,7 +18,7 @@
   <!-- Cabeçalho para mostrar uma versão e facilitar os testes. Pode ser removido depois -->
   <div
     style="position: fixed; top: 0; width: 100%; text-align: center; background-color: rgba(0,0,0,0.5); color: white; padding: 5px; z-index: 1;">
-    <h1>Meu Projeto RA Geolocation v1.16</h1>
+    <h1>Meu Projeto RA Geolocation v1.17</h1>
   </div>
 
   <a-scene vr-mode-ui='enabled: false' embedded arjs='sourceType: webcam; debugUIEnabled: false;' arjs-location-source>
@@ -34,15 +34,15 @@
     <!-- scale indica o tamanho em metros -->
 
     <!-- Esta é a casa da Madalena -->
-    <a-plane src="#pin" look-at="[gps-camera]" scale="5 5 5" material="transparent: true; alpha-test: 0.5"
+    <a-plane src="#pin" look-at="[gps-camera]" scale="5 10 1" material="transparent: true; alpha-test: 0.5"
       gps-entity-place="latitude: -20.720333; longitude: -42.866057; altitude: 10;"></a-plane>
 
     <!-- Esta é a casa do André -->
-    <a-plane src="#pin" look-at="[gps-camera]" scale="2 2 2" material="transparent: true; alpha-test: 0.5"
+    <a-plane src="#pin" look-at="[gps-camera]" scale="2 4 1" material="transparent: true; alpha-test: 0.5"
       gps-entity-place="latitude: -20.720868; longitude: -42.866264; altitude: 10;"></a-plane>
 
     <!-- Este é o clube -->
-    <a-plane src="#pin" look-at="[gps-camera]" scale="10 10 10" material="transparent: true; alpha-test: 0.5"
+    <a-plane src="#pin" look-at="[gps-camera]" scale="10 20 1" material="transparent: true; alpha-test: 0.5"
       gps-entity-place="latitude: -20.717427; longitude: -42.870493; altitude: 50;"></a-plane>
 
     <a-camera gps-camera rotation-reader> </a-camera>
