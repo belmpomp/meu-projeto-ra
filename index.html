@@ -29,7 +29,7 @@
   <!-- Cabeçalho para mostrar uma versão e facilitar os testes. Pode ser removido depois -->
   <div
     style="position: fixed; top: 0; left: 0; width: 100%; box-sizing: border-box; text-align: center; background-color: rgba(0,0,0,0.5); color: white; padding: 5px; z-index: 1;">
-    <h1>Teste RA v1.29</h1>
+    <h1>Teste RA v1.30</h1>
   </div>
 
   <a-scene cursor='rayOrigin: mouse' raycaster='near: 0.1; far: 50000' vr-mode-ui='enabled: false' embedded
@@ -58,19 +58,23 @@
       gps-entity-place="latitude: -20.762783714898124; longitude: -42.86826288160144;"></a-plane>
 
     <!-- Igreja Léa -->
-    <a-plane src="#capivara" click-link="url: https://www.ufv.br/" look-at="[gps-camera]" scale="2 4 1" position="0 10 0"
-      material="transparent: true; alpha-test: 0.5"
+    <a-plane src="#capivara" click-link="url: https://www.ufv.br/" look-at="[gps-camera]" scale="4 4 1"
+      position="0 10 0" material="transparent: true; alpha-test: 0.5"
       gps-entity-place="latitude: -20.736200330298562; longitude: -42.848244480245306;"></a-plane>
 
     <!-- piscina Léa -->
-    <a-plane src="#arvore" click-link="url: https://www.ufv.br/" look-at="[gps-camera]" scale="2 4 1" position="0 10 0"
+    <a-plane src="#arvore" click-link="url: https://www.ufv.br/" look-at="[gps-camera]" scale="8 8 1" position="0 10 0"
       material="transparent: true; alpha-test: 0.5"
       gps-entity-place="latitude: -20.733540134388168; longitude: -42.848296697772625;"></a-plane>
 
     <!-- Este é o clube -->
-    <a-plane src="#pin" click-link="url: https://www.ufv.br/" look-at="[gps-camera]" scale="10 20 1" position="0 10 0"
+    <a-plane src="#pin" click-link="url: https://www.ufv.br/" look-at="[gps-camera]" scale="10 20 1" position="0 50 0"
       material="transparent: true; alpha-test: 0.5"
       gps-entity-place="latitude: -20.717427; longitude: -42.870493;"></a-plane>
+    <!-- Esta é a piscina do clube -->
+    <a-plane src="#pin" click-link="url: https://www.ufv.br/" look-at="[gps-camera]" scale="10 20 1" position="0 50 0"
+      material="transparent: true; alpha-test: 0.5"
+      gps-entity-place="latitude: -20.717067076290135; longitude: 42.87014795001279;"></a-plane>
 
     <!-- Mada -->
     <a-plane src="#pin" click-link="url: https://www.ufv.br/" look-at="[gps-camera]" scale="10 20 1" position="0 10 0"
