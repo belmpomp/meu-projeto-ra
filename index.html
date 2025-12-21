@@ -7,11 +7,12 @@
   <script type='text/javascript' src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
   <script type='text/javascript'
     src='https://raw.githack.com/AR-js-org/AR.js/3.4.7/three.js/build/ar-threex-location-only.js'></script>
-  <script type='text/javascript'
-    src='https://raw.githack.com/AR-js-org/AR.js/3.4.7/aframe/build/aframe-ar.js'></script>
+  <script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/3.4.7/aframe/build/aframe-ar.js'></script>
   <script type='text/javascript'
     src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+
   <script>
+    // Componente para lidar com cliques em elementos
     AFRAME.registerComponent('click-link', {
       schema: { url: { type: 'string', default: '' } },
       init: function () {
@@ -28,39 +29,45 @@
   <!-- Cabeçalho para mostrar uma versão e facilitar os testes. Pode ser removido depois -->
   <div
     style="position: fixed; top: 0; left: 0; width: 100%; box-sizing: border-box; text-align: center; background-color: rgba(0,0,0,0.5); color: white; padding: 5px; z-index: 1;">
-    <h1>Teste RA v1.27</h1>
+    <h1>Teste RA v1.28</h1>
   </div>
 
-  <a-scene cursor='rayOrigin: mouse' raycaster='near: 0.1; far: 50000' vr-mode-ui='enabled: false' embedded arjs='sourceType: webcam; debugUIEnabled: false;' arjs-location-source>
+  <a-scene cursor='rayOrigin: mouse' raycaster='near: 0.1; far: 50000' vr-mode-ui='enabled: false' embedded
+    arjs='sourceType: webcam; debugUIEnabled: false;' arjs-location-source>
 
-    <!-- Aqui são carregadas as imagens -->
+    <!-- Aqui são carregadas as imagens (asset) -->
     <a-assets>
       <img id="pin" src="pinicon.png">
     </a-assets>
 
     <!-- Aqui são definidos os objetos 3D com latitude, longitude e altitude -->
-    <!-- A propriedade src deve corresponder ao id do asset criando anteriormente -->
+    <!-- A propriedade src deve corresponder ao idda imagem (asset) criando anteriormente -->
     <!-- look-at="[gps-camera]" significa que a imagem vai ficar sempre virada para onde o usuário estiver, para ele poder ver ela de frente e não de lado -->
     <!-- scale indica o tamanho em metros (x y z), z não importa porque são imagens 2d -->
 
     <!-- Bernardao -->
-    <a-plane src="#pin" click-link="url: https://www.ufv.br/" look-at="[gps-camera]" scale="5 10 1" material="transparent: true; alpha-test: 0.5"
+    <a-plane src="#pin" click-link="url: https://www.ufv.br/" look-at="[gps-camera]" scale="5 10 1" position="0 10 0"
+      material="transparent: true; alpha-test: 0.5"
       gps-entity-place="latitude: -20.762000; longitude: -42.869353;"></a-plane>
 
     <!-- Bello Lisboa -->
-    <a-plane src="#pin" click-link="url: https://www.ufv.br/" look-at="[gps-camera]" scale="2 4 1" material="transparent: true; alpha-test: 0.5"
+    <a-plane src="#pin" click-link="url: https://www.ufv.br/" look-at="[gps-camera]" scale="2 4 1" position="0 10 0"
+      material="transparent: true; alpha-test: 0.5"
       gps-entity-place="latitude: -20.762783714898124; longitude: -42.86826288160144;"></a-plane>
 
     <!-- Este é o clube -->
-    <a-plane src="#pin" click-link="url: https://www.ufv.br/" look-at="[gps-camera]" scale="10 20 1" material="transparent: true; alpha-test: 0.5"
+    <a-plane src="#pin" click-link="url: https://www.ufv.br/" look-at="[gps-camera]" scale="10 20 1" position="0 10 0"
+      material="transparent: true; alpha-test: 0.5"
       gps-entity-place="latitude: -20.717427; longitude: -42.870493;"></a-plane>
 
     <!-- Mada -->
-    <a-plane src="#pin" click-link="url: https://www.ufv.br/" look-at="[gps-camera]" scale="10 20 1" material="transparent: true; alpha-test: 0.5"
+    <a-plane src="#pin" click-link="url: https://www.ufv.br/" look-at="[gps-camera]" scale="10 20 1" position="0 10 0"
+      material="transparent: true; alpha-test: 0.5"
       gps-entity-place="latitude: -20.720308609543455; longitude: -42.86602629739985;"></a-plane>
-    
+
     <!-- André -->
-    <a-plane src="#pin" click-link="url: https://www.ufv.br/" look-at="[gps-camera]" scale="10 20 1" material="transparent: true; alpha-test: 0.5"
+    <a-plane src="#pin" click-link="url: https://www.ufv.br/" look-at="[gps-camera]" scale="10 20 1" position="0 10 0"
+      material="transparent: true; alpha-test: 0.5"
       gps-entity-place="latitude: -20.720953116413185; longitude: -42.86622534743876;"></a-plane>
 
     <a-camera id="camera" gps-camera rotation-reader></a-camera>
