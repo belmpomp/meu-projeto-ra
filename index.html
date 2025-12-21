@@ -18,7 +18,7 @@
   <!-- Cabeçalho para mostrar uma versão e facilitar os testes. Pode ser removido depois -->
   <div
     style="position: fixed; top: 0; width: 100%; text-align: center; background-color: rgba(0,0,0,0.5); color: white; padding: 5px; z-index: 1;">
-    <h1>Meu Projeto RA Geolocation v1.22</h1>
+    <h1>Meu Projeto RA Geolocation v1.23</h1>
   </div>
 
   <a-scene vr-mode-ui='enabled: false' embedded arjs='sourceType: webcam; debugUIEnabled: false;' arjs-location-source>
@@ -53,15 +53,15 @@
     <a-plane src="#pin" look-at="[gps-camera]" scale="10 20 1" material="transparent: true; alpha-test: 0.5"
       gps-entity-place="latitude: -20.720953116413185; longitude: -42.86622534743876; altitude: 50;"></a-plane>
 
-    <a-camera id="main-camera" gps-camera rotation-reader camera="fov: 80"></a-camera>
+    <a-camera id="main-camera" gps-camera rotation-reader fov="120"></a-camera>
   </a-scene>
 
   <!-- Controles para ajustar o FOV -->
   <div
     style="position: fixed; bottom: 10px; left: 10px; background-color: rgba(0,0,0,0.7); color: white; padding: 10px; border-radius: 5px; z-index: 1; font-family: sans-serif;">
-    <label for="fov-slider">Ajuste de Câmera (FOV): <span id="fov-value">80</span></label>
+    <label for="fov-slider">Ajuste de Câmera (FOV): <span id="fov-value">120</span></label>
     <br>
-    <input type="range" id="fov-slider" min="20" max="140" value="80" style="width: 150px;">
+    <input type="range" id="fov-slider" min="20" max="140" value="120" style="width: 150px;">
   </div>
 
   <script>
