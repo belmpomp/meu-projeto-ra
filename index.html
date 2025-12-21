@@ -17,8 +17,8 @@
 
   <!-- Cabeçalho para mostrar uma versão e facilitar os testes. Pode ser removido depois -->
   <div
-    style="position: fixed; top: 0; width: 100%; text-align: center; background-color: rgba(0,0,0,0.5); color: white; padding: 5px; z-index: 1;">
-    <h1>Meu Projeto RA Geolocation v1.25</h1>
+    style="position: fixed; top: 0; left: 0; width: 100%; box-sizing: border-box; text-align: center; background-color: rgba(0,0,0,0.5); color: white; padding: 5px; z-index: 1;">
+    <h1>Meu Projeto RA Geolocation v1.26</h1>
   </div>
 
   <a-scene vr-mode-ui='enabled: false' embedded arjs='sourceType: webcam; debugUIEnabled: false;' arjs-location-source>
@@ -53,52 +53,9 @@
     <a-plane src="#pin" look-at="[gps-camera]" scale="10 20 1" material="transparent: true; alpha-test: 0.5"
       gps-entity-place="latitude: -20.720953116413185; longitude: -42.86622534743876;"></a-plane>
 
-    <a-camera id="camera" gps-camera rotation-reader fov="120" fov-control></a-camera>
+    <a-camera id="camera" gps-camera rotation-reader></a-camera>
   </a-scene>
 
-  <!-- Controles para ajustar o FOV -->
-  <div
-    style="position: fixed; bottom: 10px; left: 10px; background-color: rgba(0,0,0,0.7); color: white; padding: 10px; border-radius: 5px; z-index: 1; font-family: sans-serif;">
-    <label for="fov-slider">Ajuste de Câmera (FOV): <span id="fov-value">120</span></label>
-    <br>
-    <input type="range" id="fov-slider" min="20" max="140" value="120" style="width: 150px;">
-  </div>
-
-  <script>
-    // Registra um componente para controlar o FOV e garantir que o AR.js não o sobrescreva
-    AFRAME.registerComponent('fov-control', {
-      schema: {
-        fov: { type: 'number', default: 120 }
-      },
-      tick: function () {
-        const camera = this.el.getObject3D('camera');
-        if (camera) {
-          // Se o FOV for alterado pelo AR.js, nós o forçamos de volta para o valor do slider
-          if (camera.fov !== this.data.fov) {
-            camera.fov = this.data.fov;
-            camera.updateProjectionMatrix();
-          }
-        }
-      }
-    });
-
-    window.onload = () => {
-      const camera = document.getElementById('camera');
-      const slider = document.getElementById('fov-slider');
-      const fovValue = document.getElementById('fov-value');
-
-      // Inicializa o componente com o valor atual do slider
-      camera.setAttribute('fov-control', 'fov', Number(slider.value));
-
-      slider.addEventListener('input', (event) => {
-        const newFov = Number(event.target.value);
-        // Atualiza o atributo do nosso componente customizado
-        camera.setAttribute('fov-control', 'fov', newFov);
-        camera.setAttribute('fov', newFov);
-        fovValue.textContent = newFov;
-      });
-    };
-  </script>
 </body>
 
 </html>
