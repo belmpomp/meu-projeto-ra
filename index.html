@@ -29,7 +29,7 @@
   <!-- Cabeçalho para mostrar uma versão e facilitar os testes. Pode ser removido depois -->
   <div
     style="position: fixed; top: 0; left: 0; width: 100%; box-sizing: border-box; text-align: center; background-color: rgba(0,0,0,0.5); color: white; padding: 5px; z-index: 1;">
-    <h1>Teste RA v1.33</h1>
+    <h1>Teste RA v1.34</h1>
   </div>
 
   <a-scene cursor='rayOrigin: mouse' raycaster='near: 0.1; far: 50000' vr-mode-ui='enabled: false' embedded
@@ -47,13 +47,8 @@
     <!-- look-at="[gps-camera]" significa que a imagem vai ficar sempre virada para onde o usuário estiver, para ele poder ver ela de frente e não de lado -->
     <!-- scale indica o tamanho em metros (x y z), z não importa porque são imagens 2d -->
 
-    <!-- Bernardao -->
-    <a-plane src="#bernardao" click-link="url: https://www.ufv.br/" look-at="[gps-camera]" scale="10 10 1"
-      material="transparent: true; alpha-test: 0.5"
-      gps-entity-place="latitude: -20.76202202771924; longitude: -42.869269038169726;"></a-plane>
-
     <!-- Bello Lisboa -->
-    <a-plane src="#bello" click-link="url: https://www.ufv.br/" look-at="[gps-camera]" scale="10 10 1"
+    <a-plane src="#capivara" click-link="url: https://www.ufv.br/" look-at="[gps-camera]" scale="10 10 1"
       material="transparent: true; alpha-test: 0.5"
       gps-entity-place="latitude: -20.762794204252273; longitude: -42.868369981107186;"></a-plane>
 
